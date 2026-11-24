@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soulless Catcher · Dos flujos para la recepción del material</title>
+  <meta name="description" content="Propuesta del Grupo 25 (IFTS 29) para dos reglas de Soulless Catcher, la startup del IFTS 16 que revisa imágenes y videos sospechosos de haber sido generados con IA.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <p class="marca">Grupo 25 · BlueTech</p>
+    <nav aria-label="Secciones de la página">
+      <ul>
+        <li><a href="#startup">La startup</a></li>
+        <li><a href="#propuesta-1">Propuesta 1</a></li>
+        <li><a href="#propuesta-2">Propuesta 2</a></li>
+        <li><a href="#decisiones">Decisiones del grupo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <section class="portada" id="startup" aria-labelledby="titulo-startup">
+      <figure class="logo">
+        <img src="material/logo-soulless-catcher.png" width="512" height="512"
+             alt="Logo de Soulless Catcher: una llama blanca con dos engranajes grises sobre fondo negro.">
+      </figure>
+      <div class="portada-texto">
+        <p class="etiqueta">Verificación de contenido digital</p>
+        <h1 id="titulo-startup">Soulless Catcher</h1>
+        <p class="bajada">Asistente para revisar imágenes y videos sospechosos de haber sido generados con IA.</p>
+        <p>
+          Soulless Catcher es una startup creada por estudiantes del <strong>IFTS 16</strong>, que definieron sus
+          condiciones de funcionamiento mediante lógica proposicional. Nosotros, el <strong>Grupo 25 del IFTS 29</strong>,
+          proponemos cómo resolver dos de esas reglas con agentes.
+        </p>
+        <dl class="datos">
+          <div><dt>Bloque asignado</dt><dd>Recepción del material (S04-A)</dd></div>
+          <div><dt>Equipo</dt><dd>BlueTech: Javier López, Rocío Arenas, Facundo Sánchez y Damián Gorosito</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-necesidad">
+      <h2 id="titulo-necesidad">La necesidad</h2>
+      <p>
+        Quien recibe una imagen o un video dudoso quiere saber si puede confiar en él. Antes de revisar nada, el
+        servicio tiene que <strong>recibir bien el material</strong>: comprobar que se puede abrir, que es de un
+        formato que sabe revisar y, si el usuario lo indica, anotar de dónde viene.
+      </p>
+      <p>
+        Las dos reglas que nos tocaron cubren justamente ese primer paso. Para cada una proponemos un
+        <strong>futuro agente</strong> y dibujamos su recorrido. Es una propuesta de diseño: nada de esto se
+        ejecuta ni se conecta a servicios reales.
+      </p>
+      <ul class="atajos">
+        <li><a href="#propuesta-1"><strong>Propuesta 1</strong> · Arranque ordenado de la revisión</a></li>
+        <li><a href="#propuesta-2"><strong>Propuesta 2</strong> · Archivo no utilizable: explicar y pedir otro</a></li>
+      </ul>
+    </section>
+
+    <section id="propuesta-1" aria-labelledby="titulo-p1">
+      <p class="etiqueta">Sentencia R1</p>
+      <h2 id="titulo-p1">Propuesta 1 · Arranque ordenado de la revisión</h2>
+      <blockquote>
+        Si el archivo es accesible y su formato está admitido, el sistema inicia la revisión y registra el enlace de origen cuando está disponible.
+      </blockquote>
+      <p class="beneficio">
+        <strong>Beneficio.</strong> La revisión solo comienza con material utilizable y cada informe queda con su
+        origen registrado cuando existe, lo que da trazabilidad. El usuario sabe enseguida que su pedido ya está en marcha.
+      </p>
+
+      <figure class="diagrama">
+        <img src="diagramas/flujo-r1.svg" width="1040" height="1210"
+             alt="Diagrama del flujo 1. Llega un archivo y el agente consulta un verificador de archivos. Si el archivo es accesible y su formato está admitido, inicia la revisión; luego, si hay enlace de origen lo registra y, si no hay, continúa sin él, y el flujo termina con la revisión en marcha. Si la condición no se cumple, la regla R1 no se aplica y el caso pasa al flujo 2.">
+        <figcaption>Flujo 1 · R1. Los pasos violetas con borde punteado son decisiones del grupo, no salen de la sentencia.</figcaption>
+      </figure>
+
+      <details>
+        <summary>Qué entra, qué se decide, qué se hace y cómo termina</summary>
+        <dl>
+          <dt>Datos que entran</dt>
+          <dd>El archivo, su formato y, si el usuario lo aportó, el enlace de origen.</dd>
+          <dt>Qué se decide</dt>
+          <dd>Si el archivo es accesible <strong>y</strong> su formato está admitido. Las dos condiciones tienen que cumplirse a la vez.</dd>
+          <dt>Acción propuesta</dt>
+          <dd>El agente consulta un verificador de archivos. Si todo está bien, inicia la revisión y registra el enlace de origen <strong>solo si existe</strong>.</dd>
+          <dt>Resultado esperado</dt>
+          <dd>La revisión queda iniciada, con un registro que indica el origen del material o que no se informó ninguno.</dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Excepciones e intervención humana</summary>
+        <dl>
+          <dt>Archivo válido pero sin enlace de origen</dt>
+          <dd>La sentencia pide registrar el enlace “cuando está disponible”, así que la revisión comienza igual y el registro indica que no hay enlace.</dd>
+          <dt>Archivo que se encuentra pero está dañado</dt>
+          <dd>No se puede abrir, entonces se trata como no accesible y el caso sigue por el flujo 2. Es una decisión del grupo (D1).</dd>
+          <dt>Intervención humana</dt>
+          <dd>No interviene una persona en este recorrido: es el camino normal.</dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Recorridos de comprobación</summary>
+        <table>
+          <thead><tr><th scope="col">Caso</th><th scope="col">Se cumple la condición</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>Imagen que se abre, formato admitido, con enlace de origen</td><td>Sí</td><td>Se inicia la revisión y se registra el enlace.</td></tr>
+            <tr><td>Video que se abre, formato admitido, sin enlace</td><td>Sí</td><td>Se inicia la revisión, sin enlace registrado.</td></tr>
+            <tr><td>Documento de texto (formato no admitido)</td><td>No</td><td>R1 no se aplica: el caso pasa al flujo 2.</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </section>
+
+    <section id="propuesta-2" aria-labelledby="titulo-p2">
+      <p class="etiqueta">Sentencia R2</p>
+      <h2 id="titulo-p2">Propuesta 2 · Archivo no utilizable: explicar y pedir otro</h2>
+      <blockquote>
+        Si el archivo no puede abrirse o su formato no está admitido, el sistema explica el problema y solicita otro archivo sin emitir un resultado.
+      </blockquote>
+      <p class="beneficio">
+        <strong>Beneficio.</strong> Evita informes engañosos sobre material que no se pudo ver. El usuario sabe
+        exactamente qué corregir, en lugar de recibir un error genérico.
+      </p>
+
+      <figure class="diagrama">
+        <img src="diagramas/flujo-r2.svg" width="1040" height="1290"
+             alt="Diagrama del flujo 2. Llega un archivo y el agente consulta un verificador de archivos. Si el archivo no se puede abrir o su formato no está admitido, explica el problema, solicita otro archivo y no emite ningún resultado. Si es el segundo archivo seguido que falla, ofrece ayuda de una persona de soporte; si no, espera un nuevo envío. Si el archivo es válido, la regla R2 no se aplica y el caso sigue por el flujo 1.">
+        <figcaption>Flujo 2 · R2. Los pasos violetas con borde punteado son decisiones del grupo, no salen de la sentencia.</figcaption>
+      </figure>
+
+      <details>
+        <summary>Qué entra, qué se decide, qué se hace y cómo termina</summary>
+        <dl>
+          <dt>Datos que entran</dt>
+          <dd>El archivo, si se puede abrir, su formato y la lista de formatos admitidos.</dd>
+          <dt>Qué se decide</dt>
+          <dd>Si el archivo <strong>no</strong> puede abrirse <strong>o</strong> su formato <strong>no</strong> está admitido. Alcanza con que se cumpla una de las dos.</dd>
+          <dt>Acción propuesta</dt>
+          <dd>El agente explica qué falló y qué formatos se admiten, solicita otro archivo y <strong>no emite ningún resultado</strong>, ni veredicto ni puntaje.</dd>
+          <dt>Resultado esperado</dt>
+          <dd>El usuario recibe una explicación y un pedido claro. No se genera ningún informe sobre ese archivo.</dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Excepciones e intervención humana</summary>
+        <dl>
+          <dt>El archivo falla por los dos motivos a la vez</dt>
+          <dd>No se abre y, además, su formato no está admitido. El agente explica ambos motivos en un solo mensaje y pide un archivo nuevo.</dd>
+          <dt>El segundo archivo también falla</dt>
+          <dd>Para no dejar al usuario en un ciclo sin salida, el agente ofrece ayuda de una <strong>persona de soporte</strong>. Es una decisión del grupo (D3): la sentencia no define reintentos.</dd>
+        </dl>
+      </details>
+
+      <details>
+        <summary>Recorridos de comprobación</summary>
+        <table>
+          <thead><tr><th scope="col">Caso</th><th scope="col">Se cumple la condición</th><th scope="col">Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>Archivo con formato no admitido</td><td>Sí</td><td>Se explica el problema, se pide otro archivo y no se emite resultado.</td></tr>
+            <tr><td>Archivo dañado que no se abre</td><td>Sí</td><td>Igual que el caso anterior.</td></tr>
+            <tr><td>Imagen que se abre, formato admitido</td><td>No</td><td>R2 no se aplica: el caso sigue por el flujo 1.</td></tr>
+            <tr><td>Segundo archivo seguido que también falla</td><td>Sí</td><td>Igual que el primero, y además se ofrece ayuda de una persona (D3).</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </section>
+
+    <section id="decisiones" aria-labelledby="titulo-decisiones">
+      <h2 id="titulo-decisiones">Decisiones del grupo</h2>
+      <p>Estas decisiones <strong>no salen de las sentencias</strong>. Las agregamos para que cada recorrido quede completo.</p>
+      <table>
+        <thead><tr><th scope="col">Código</th><th scope="col">Decisión</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">D1</th><td>“Accesible” se entiende como “se puede acceder y abrir”. Se comprueba en este orden: acceso, apertura y formato. Si algo falla, se aplica R2.</td></tr>
+          <tr><th scope="row">D2</th><td>“Disponible” (enlace de origen) significa que el usuario lo aportó. Se registra tal como viene, sin verificarlo.</td></tr>
+          <tr><th scope="row">D3</th><td>Si el usuario envía dos archivos seguidos que fallan, se ofrece ayuda de una persona de soporte.</td></tr>
+          <tr><th scope="row">D4</th><td>El mensaje de error incluye la lista de formatos admitidos.</td></tr>
+          <tr><th scope="row">D5</th><td>Como las sentencias no los listan, usamos como ejemplo formatos comunes de imagen y video (JPG, PNG y MP4). Los define la startup.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>TP3 · Desarrollo de Sistemas Web Front End · IFTS 29 · Grupo 25 · BlueTech. Soulless Catcher es una startup creada por estudiantes del IFTS 16.</p>
+  </footer>
+</body>
+</html>
