@@ -15,12 +15,16 @@ Landing que propone cómo resolver con agentes dos reglas de **Soulless Catcher*
 
 | Integrante | Aporte |
 |---|---|
-| Javier Nehuén López | Armó la landing, los diagramas y la documentación con el agente de IA, y revisó cada etapa. _[ajustar si hace falta]_ |
-| Rocío Ailen Arenas | _[completar con lo que realmente aportó]_ |
-| Facundo Sánchez | _[completar con lo que realmente aportó]_ |
-| Damián Gorosito | _[completar con lo que realmente aportó]_ |
+| **Javier Nehuén López** | Dirigió el trabajo con el agente de IA y lo hizo por etapas: análisis de las sentencias, decisiones del grupo, diagramas, landing y documentación. Revisó y probó cada etapa antes de seguir. |
+| **Damián Gorosito** | Inició y creó la versión original de *Colgá tu trapo*, el otro trabajo del grupo hecho con IA (ver más abajo). _[agregar lo que aportó a esta landing, si participó]_ |
+| **Rocío Ailen Arenas** | _[completar con lo que realmente aportó]_ |
+| **Facundo Sánchez** | _[completar con lo que realmente aportó]_ |
 
-> Cada aporte debe describir lo que esa persona hizo. Si alguien no participó en este trabajo, no se lo incluye.
+> Cada aporte describe lo que esa persona hizo. Si alguien no participó en este trabajo, no se lo incluye.
+
+## Otro trabajo del grupo con IA: Colgá tu trapo
+
+Además de esta landing, el grupo tiene *Colgá tu trapo*, un mural de frases con forma de bandera de tela para proyectar. Lo inició Damián Gorosito y Javier Nehuén López le sumó mejoras con Claude Code: datos guardados más seguros, proyección más cómoda, accesibilidad, fuentes y colores. Tiene su propio repositorio y su bitácora de mejoras y prompts. _[agregar enlace]_
 
 ## Sentencias asignadas
 
@@ -52,16 +56,35 @@ La landing es HTML y CSS estáticos, sin JavaScript ni pasos de compilación. Pa
 
 ### Cómo se trabajó
 
-Se trabajó por etapas, cada una con su commit y su etiqueta (`etapa-0`, `etapa-1`, `etapa-2`), para poder volver atrás.
+Se aplicó el mismo método que en *Colgá tu trapo*: pasos chicos, un commit y una etiqueta por paso (`etapa-0` a `etapa-3`), respaldo de los archivos originales con verificación SHA-256 y prueba del resultado antes de avanzar. Así siempre se puede volver atrás.
 
-| Etapa | Instrucción inicial | Problema o ajuste | Mejora pedida |
-|---|---|---|---|
-| 0 · Asignación | Leer la consigna y copiar las sentencias sin cambiarlas. | Se verificó que el texto de R1 y R2 fuera idéntico al de la consigna. | Guardar el logo original sin modificarlo. |
-| 1 · Fichas y propuestas | Analizar cada sentencia: condición, acción y resultado. | Términos ambiguos, como «accesible» y «disponible». | Documentar cada duda como decisión del grupo (D1 a D5). |
-| 2 · Diagramas | Dibujar el flujo de cada regla. | Se revisó el render de cada SVG antes de aceptarlo. | Distinguir con un estilo propio los pasos que son decisiones del grupo. |
-| 3 · Landing | Armar la página con los dos flujos y su explicación. | Hacerla accesible: texto alternativo, jerarquía de títulos, contraste y navegación por teclado. | Mantenerla simple, sin exagerar. |
+Cada etapa registra el problema que apareció, lo que cambió, el pedido y cómo se verificó. Los pedidos son reconstrucciones, no transcripciones literales.
 
-_[Agregar aquí las instrucciones literales o los ejemplos de iteración que el grupo quiera mostrar.]_
+#### Etapa 0 · Asignación
+- **Problema:** el material oficial estaba suelto y había que copiar las sentencias sin alterarlas.
+- **Qué cambió:** se guardaron los datos del grupo, el logo original y un `.gitignore`.
+- **Pedido:** «Copiá las sentencias R1 y R2 de la consigna sin cambiar una palabra y guardá el logo tal cual.»
+- **Verificación:** el texto de R1 y R2 coincide con la consigna.
+
+#### Etapa 1 · Fichas y propuestas
+- **Problema:** las sentencias tienen términos ambiguos: «accesible», «disponible» y qué pasa si el usuario falla dos veces.
+- **Qué cambió:** cada duda se resolvió como decisión del grupo (D1 a D5), separada de lo que dicen las sentencias.
+- **Pedido:** «Analizá cada sentencia en condición, acción y resultado, y proponé un agente para cada una. Marcá lo que no sale de la sentencia.»
+- **Verificación:** cada decisión quedó trazada a la parte de la sentencia que la motivó.
+
+#### Etapa 2 · Diagramas
+- **Problema:** los diagramas tenían que ser claros y distinguir lo que sale de la sentencia de lo que decidió el grupo.
+- **Qué cambió:** dos diagramas SVG; los pasos que son decisiones del grupo tienen borde punteado y color violeta.
+- **Pedido:** «Dibujá el flujo de cada regla con sus condiciones, la acción del agente y el cierre.»
+- **Verificación:** se renderizó cada SVG para revisarlo antes de aceptarlo.
+
+#### Etapa 3 · Landing y documentación
+- **Problema:** la página tenía que ser accesible y simple, sin sobrecargar.
+- **Qué cambió:** HTML y CSS estáticos, con texto alternativo en los diagramas, jerarquía de títulos, navegación por teclado y el detalle de cada flujo en secciones desplegables nativas.
+- **Pedido:** «Armá la landing de la startup con los dos flujos y sus decisiones. No exageres.»
+- **Verificación:** los enlaces internos, los diagramas y el logo cargan.
+
+_[Agregar aquí las instrucciones literales del grupo, si las hay.]_
 
 ## Limitaciones
 
