@@ -6,7 +6,7 @@ Landing que propone cómo resolver con agentes dos reglas de **Soulless Catcher*
 
 | | |
 |---|---|
-| **Landing publicada** | _[completar con el enlace de Vercel]_ |
+| **Landing publicada** | https://tp-3front.vercel.app/ |
 | **Repositorio** | https://github.com/Jableed43/tp-3_front |
 | **Bloque asignado** | Recepción del material (S04-A) |
 | **Tecnología** | HTML y CSS estáticos, sin JavaScript ni framework |
@@ -17,9 +17,9 @@ Landing que propone cómo resolver con agentes dos reglas de **Soulless Catcher*
 | Integrante | Aporte |
 |---|---|
 | **Javier Nehuén López** | Dirigió el trabajo con el agente de IA y lo hizo por etapas: análisis de las sentencias, decisiones del grupo, diagramas, landing y documentación. Revisó y probó cada etapa antes de seguir. |
-| **Damián Gorosito** | Inició y creó la versión original de *Colgá tu trapo*, el otro trabajo del grupo hecho con IA (ver más abajo). _[agregar lo que aportó a esta landing, si participó]_ |
-| **Rocío Ailen Arenas** | _[completar con lo que realmente aportó]_ |
-| **Facundo Sánchez** | _[completar con lo que realmente aportó]_ |
+| **Damián Gorosito** | Inició y creó la versión original de *Colgá tu trapo*, el otro trabajo del grupo hecho con IA (ver más abajo).  |
+| **Rocío Ailen Arenas** | |
+| **Facundo Sánchez** |  |
 
 > Cada aporte describe lo que esa persona hizo. Si alguien no participó en este trabajo, no se lo incluye.
 
