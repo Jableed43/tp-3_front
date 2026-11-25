@@ -7,8 +7,9 @@ Landing que propone cómo resolver con agentes dos reglas de **Soulless Catcher*
 | | |
 |---|---|
 | **Landing publicada** | _[completar con el enlace de Vercel]_ |
-| **Repositorio** | _[completar con el enlace de GitHub]_ |
+| **Repositorio** | https://github.com/Jableed43/tp-3_front |
 | **Bloque asignado** | Recepción del material (S04-A) |
+| **Tecnología** | HTML y CSS estáticos, sin JavaScript ni framework |
 | **Entrega** | 26/11/2026 |
 
 ## Integrantes y aportes
@@ -84,7 +85,17 @@ Cada etapa registra el problema que apareció, lo que cambió, el pedido y cómo
 - **Pedido:** «Armá la landing de la startup con los dos flujos y sus decisiones. No exageres.»
 - **Verificación:** los enlaces internos, los diagramas y el logo cargan.
 
-_[Agregar aquí las instrucciones literales del grupo, si las hay.]_
+#### Instrucciones dadas al agente (textuales)
+
+Estas son algunas de las instrucciones que se le dieron, tal como se escribieron:
+
+- «Piénsalo en etapas y encáralo, no tenemos repo de esto, por lo tanto debes tener el doble de cuidado.» Dio origen al método por etapas, a los respaldos y a las etiquetas.
+- «Sí, de acuerdo con todo, seguí con la landing. No quiero que exageres.» Se tradujo en una página simple, sin JavaScript ni elementos de más.
+
+#### Correcciones pedidas
+
+- Se corrigió el rumbo cuando el agente avanzó con la landing mientras se pedía mejorar el otro trabajo del grupo (*Colgá tu trapo*). Se pausó la landing, quedó guardada con la etiqueta `landing-wip` y se retomó después.
+- Se pidió no exagerar: el contenido se limitó a lo que piden las dos sentencias y a las decisiones del grupo.
 
 ## Limitaciones
 
