@@ -6,7 +6,7 @@ Landing que propone cómo resolver con agentes dos reglas de **Soulless Catcher*
 
 | | |
 |---|---|
-| **Landing publicada** | _[completar con el enlace de Vercel]_ |
+| **Landing publicada** | _https://tp-3front.vercel.app/_ |
 | **Repositorio** | _https://github.com/Jableed43/tp-3_front_ |
 | **Bloque asignado** | Recepción del material (S04-A) |
 | **Entrega** | 25/11/2026 |
